@@ -21,6 +21,17 @@ export default function Home() {
 
   useEffect(() => mudar(arrActive, setArrActive), [arrActive])
 
+  const mudar = () => {
+    setTimeout(() => {
+      const primeitoItem = arrActive[0];
+      const novoArr = arrActive;
+      novoArr.shift();
+      novoArr.push(primeitoItem);
+      setArrActive(novoArr);
+      console.log('🟢', arrActive);
+    }, 5000);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
