@@ -1,20 +1,8 @@
-import React, { useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { Card, Text } from './components/Card'
-
-function mudar(arrActive, setArrActive) {
-  setTimeout(() => {
-    const primeitoItem = arrActive[0];
-    const novoArr = arrActive;
-    novoArr.shift();
-    novoArr.push(primeitoItem);
-    setArrActive(novoArr);
-    console.log('🟢', arrActive);
-  }, 5000);
-}
 
 export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
