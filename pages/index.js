@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { Card, Text } from './components/Card'
 
@@ -19,7 +19,6 @@ const mudar = (arrActive, setArrActive) => {
 export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
   
-  useEffect(() => mudar(arrActive, setArrActive), []);
 
   return (
     <div className={styles.container} onClick={() => mudar(arrActive, setArrActive)}>
