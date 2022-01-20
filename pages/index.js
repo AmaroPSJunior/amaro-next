@@ -6,10 +6,8 @@ import { Card, Text } from './components/Card'
 
 export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
-
-  useEffect(() => mudar(arrActive, setArrActive), [arrActive])
-
-  const mudar = () => {
+  
+  function mudar() {
     setTimeout(() => {
       const primeitoItem = arrActive[0];
       const novoArr = arrActive;
@@ -19,6 +17,8 @@ export default function Home() {
       console.log('🟢', arrActive);
     }, 5000);
   }
+  
+  useEffect(() => mudar(arrActive, setArrActive), [arrActive])
 
   return (
     <div className={styles.container}>
