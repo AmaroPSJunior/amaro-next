@@ -8,7 +8,7 @@ export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
   
   function mudar() { 
-    setTimeout(() => {
+    setInterval(() => {
       const primeitoItem = arrActive[0];
       const novoArr = arrActive;
       novoArr.shift();
@@ -18,7 +18,7 @@ export default function Home() {
     }, 5000);
   }
   
-  useEffect(() => mudar(arrActive, setArrActive), [arrActive])
+  useEffect(() => mudar(arrActive, setArrActive), [])
 
   return (
     <div className={styles.container}>
