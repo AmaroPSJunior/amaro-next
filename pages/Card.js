@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+const CardComponent = styled.div`
     background-color: ${(props) => (props.active && "red")};
     margin: 1rem;
     padding: 2.5rem;
@@ -12,7 +12,7 @@ export const Card = styled.div`
     transition: color 0.15s ease, border-color 0.15s ease;
     max-width: 300px;
 
-    &:hover {
+    &:hover, Text:hover {
         background-color: #888888;
 
         * {
@@ -25,10 +25,25 @@ export const Card = styled.div`
     }
 `;
 
-export const Text = styled.span`
+export const Card = ({active, children}) => <CardComponent active={active}>{children}</CardComponent>;
+
+const TextComponent = styled.span`
     color: #5a5a5a;
 
     &:hover {
         color: white;
     }
 `;
+
+// export const Text = () => (
+//     // <TextComponent />
+//     <h2>teste</h2>
+// );
+  
+export const Text = ({children}) => <TextComponent>{children}</TextComponent>;
+
+// export function Text() {
+//    return (
+//    <TextComponent />
+//    )
+// };

@@ -14,12 +14,9 @@ const mudar = (arrActive, setArrActive) => {
   alert(`[ ${arrActive[0]}, ${arrActive[1]}, ${arrActive[2]}, ${arrActive[3]} ]`)
 }
 
-
-
 export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
   
-
   return (
     <div className={styles.container} onClick={() => mudar(arrActive, setArrActive)}>
       <Head>
