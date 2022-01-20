@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react';
 import styles from '../styles/Home.module.css'
-import { Card, Text } from './components/Card'
+import { Card, Text } from './Card'
 
 const mudar = (arrActive, setArrActive) => {
   const primeitoItem = arrActive[0];
