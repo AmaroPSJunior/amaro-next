@@ -7,7 +7,7 @@ import { Card, Text } from './components/Card'
 export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
   
-  function mudar() {
+  function mudar() { 
     setTimeout(() => {
       const primeitoItem = arrActive[0];
       const novoArr = arrActive;
