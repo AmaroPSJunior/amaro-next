@@ -6,8 +6,8 @@ import { Card, Text } from './components/Card'
 
 export default function Home() {
   const [arrActive, setArrActive] = useState([false, false, true, false]);
-  
-  function mudar() { 
+
+  function mudar() {
     setInterval(() => {
       const primeitoItem = arrActive[0];
       const novoArr = arrActive;
@@ -17,8 +17,17 @@ export default function Home() {
       console.log('🟢', arrActive);
     }, 5000);
   }
-  
-  useEffect(() => mudar(arrActive, setArrActive), [])
+
+  useEffect(() => {
+    setInterval(() => {
+      const primeitoItem = arrActive[0];
+      const novoArr = arrActive;
+      novoArr.shift();
+      novoArr.push(primeitoItem);
+      setArrActive(novoArr);
+      console.log('🟢', arrActive);
+    }, 5000);
+  }, [])
 
   return (
     <div className={styles.container}>
